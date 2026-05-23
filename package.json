@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
-    "build": "tsc && prisma generate",
+    "dev": "node init && ts-node-dev --respawn --transpile-only ./src/server.ts",
+    "build": "node init && tsc && prisma generate",
     "vercel-build": "prisma generate && tsc",
-    "start": "node dist/server.js"
+    "start": "node init && node dist/server.js"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +28,7 @@
     "jsonwebtoken": "^9.0.3",
     "multer": "^2.0.2",
     "node-cron": "^4.2.1",
+    "node-fetch": "^3.3.2",
     "nodemailer": "^8.0.1",
     "streamifier": "^0.1.1",
     "stripe": "^20.3.1",
